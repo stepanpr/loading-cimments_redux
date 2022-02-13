@@ -1,6 +1,6 @@
 const faker = require('faker')
 
-const generateComments = (amount, cursor) => {
+const commentsGenerator = (amount, cursor) => {
   const generateIdArray = (len) => {
     const arr = []
     for (let i = 0; i < len; i++) {
@@ -40,4 +40,4 @@ const generateComments = (amount, cursor) => {
   return commentsMaker()
 }
 
-module.exports = generateComments
+module.exports = commentsGenerator
