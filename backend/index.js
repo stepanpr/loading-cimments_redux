@@ -1,4 +1,4 @@
-const AMOUNT_OF_COMMENTS = 4;
+const AMOUNT_OF_COMMENTS = 5;
 
 const express = require("express");
 const commentsGenerator = require("./commentsGenerator");

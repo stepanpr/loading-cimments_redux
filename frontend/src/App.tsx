@@ -1,16 +1,14 @@
 import React from 'react';
-// import './App.css';
 import { useGetCommentsQuery, commentsApi } from './redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { addNewComments } from './redux/commentsSlice'
+import { CommentsList } from './components/CommentsList'
 
 function App() {
 
-  const { data, isLoading } = commentsApi.useGetCommentsQuery('')
-
-  console.log(data)
   return (
-    <div className="App">
-      sdsd
-      {isLoading && <h1>loading...</h1>}
+    <div>
+      <CommentsList />
     </div>
   );
 }
