@@ -4,5 +4,5 @@
 ##### Подгрузка с бекенда комментариев, сгенерированных faker при помощи useInfiniteQuery
 
 ***
+![Uploading Снимок экрана 2022-02-18 в 14.20.06.png…]()
 
-<img width="400" alt="" src="https://user-images.githubusercontent.com/49967730/151594189-4ff32509-fdfc-4f70-97b8-d56d9a917fba.png">
