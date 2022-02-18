@@ -1,13 +1,22 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { WritableDraft } from 'immer/dist/internal'
+import { act } from 'react-dom/test-utils'
 
 
-/* срез */
+/* slice */
 
-interface CommentsState {
-    arr: [] | undefined
-  }
+// interface CommentsState {
+//     arr: Array<any>,
+//     action: Array<any>
+//   }
 
-const initialState: any = [] 
+
+// const initialState: any[] = [] 
+const initialState = {
+    commentsArr: Array(0),
+    commentObj: {},
+    // comment: {}
+} 
 // const initialState: CommentsState = {
 //     arr: [],
 //     action: 
@@ -20,12 +29,13 @@ const initialState: any = []
     initialState,
     reducers: {
 
-        addNewComments: (state: any, action: any) => {
-            // reducer: (state: any, action: any) => {
-            // state.push(action.payload)/
-            return [...state, ...action.payload]
-            // }
-            // return ['§','21']
+        addNewComments: (state, action) => {
+            // return [...b, ...a]
+            //записываем элементы поступающего нового массива в state 
+            action.payload.map((item: any) => state.commentsArr.push(item)) 
+        },
+        getDataOfComment(state, action) {
+
         }
 
         // getDataofComment(state)

@@ -5,7 +5,7 @@ import commentsSlice from './commentsSlice'
 import { commentsReducer } from './commentsSlice'
 
 
-/* магазин */
+/* store */
 
 
 export const store = configureStore({
