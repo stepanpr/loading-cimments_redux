@@ -1,7 +1,7 @@
 ### loading-comments_redux
-*(react-query, express, faker, bulma)*
+*(redux-toolkit, express, faker, tailwindcss)*
 
-##### Подгрузка с бекенда комментариев, сгенерированных faker при помощи useInfiniteQuery
+##### Подгрузка с бекенда комментариев, сгенерированных faker при помощи redux-toolkit и rtk query
 
 ***
 
