@@ -15,10 +15,12 @@ const commentsSlice = createSlice({
       // return [...state.commentsArr, ...action.payload]
       action.payload.map((item: any) => state.commentsArr.push(item))
     },
-    getDataOfComment(state, action) {},
+    getComment(state, action) {
+        state.commentObj=action.payload
+    },
   },
 })
 
-export const { addNewComments } = commentsSlice.actions
+export const { addNewComments, getComment } = commentsSlice.actions
 export default commentsSlice.reducer
 export const commentsReducer = commentsSlice.reducer

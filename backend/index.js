@@ -15,9 +15,6 @@ app.get('/comments', (req, res) => {
     comments: commentsGenerator(AMOUNT_OF_COMMENTS, cursor),
     nextCursor: cursor + 1,
   })
-  // res.json({
-  //     id: 1212, name: '33', text: '44'
-  //   });
 })
 
 app.listen(PORT, () => {

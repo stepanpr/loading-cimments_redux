@@ -1,7 +1,7 @@
 import React from 'react'
 import { useGetCommentsQuery, commentsApi } from '../redux'
 import { useSelector, useDispatch } from 'react-redux'
-import { addNewComments } from '../redux/commentsSlice'
+import { addNewComments, getComment } from '../redux/commentsSlice'
 import { Comment } from './Comment'
 
 /***** IComment
@@ -39,14 +39,16 @@ export const CommentsList: React.FC = () => {
   const dispatch = useDispatch()
 
   const nestedComments = (commentsArray: IComment[]) => {
-    const map = Object.create(null)
+    const hashTable: any = {}
     commentsArray.forEach(
-      (comment: IComment) => (map[comment.id] = { ...comment, children: [] })
+      (comment: IComment) =>
+        (hashTable[comment.id] = { ...comment, children: [] })
     )
     const nestedComments: IComment[] = []
     commentsArray.forEach((comment: IComment) => {
-      if (comment.parentId) map[comment.parentId].children.push(map[comment.id])
-      else nestedComments.push(map[comment.id])
+      if (comment.parentId)
+        hashTable[comment.parentId].children.push(hashTable[comment.id])
+      else nestedComments.push(hashTable[comment.id])
     })
     return nestedComments
   }
@@ -55,10 +57,6 @@ export const CommentsList: React.FC = () => {
     refetch()
     dispatch(addNewComments(data.comments))
   }
-  console.log(data)
-  // console.log(data && data.comments)
-  // console.log(data && data.nextCursor)
-  console.log(reduxState.commentsArr)
 
   return (
     <div>
